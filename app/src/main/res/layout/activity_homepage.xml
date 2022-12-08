@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_gravity="center"
+    android:id="@+id/mainRelative"
+    tools:context=".Homepage">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/navigation_blue"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="start"
+            android:text="LTO Appointment Setter"
+            android:layout_marginEnd="70dp"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/notification"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/notifications_24"/>
+
+        <Button
+            android:id="@+id/menu"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/menu_24" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topBar"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TRANSACTIONS"
+            android:textColor="@color/lto_blue"
+            android:textSize="38sp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/license"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="#E4E3E3"
+                android:text="Licensing"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/registration"
+                android:layout_width="150dp"
+                android:layout_height="140dp"
+                android:background="#E4E3E3"
+                android:text="Motor Vehicle Registration"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/announcementLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Announcement Board"
+                android:layout_marginTop="70dp"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/lto_blue"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/announcement"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/verifyTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Account not verified"
+        android:layout_below="@id/container"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/lto_blue"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/verifyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/container"
+        android:layout_marginTop="55dp"
+        android:gravity="center"
+        android:text="Verify Account"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/verifyButton"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="LOGOUT"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+</RelativeLayout>

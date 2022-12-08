@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Calendar">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/navigation_blue"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="start"
+            android:text="LTO Appointment Setter"
+            android:layout_marginEnd="80dp"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/notification"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/notifications_24"
+            android:layout_marginStart="10dp" />
+
+        <Button
+            android:id="@+id/menu"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/menu_24" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/licensing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topBar"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="10dp"
+        android:text="Choose a date for appointment"
+        android:textColor="@color/lto_blue"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/licensing"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <DatePicker
+            android:id="@+id/date_Picker"
+            android:layout_width="wrap_content"
+            android:background="#E4E3E3"
+            android:headerBackground="@color/lto_blue"
+            android:layout_height="435dp" />
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="40dp">
+
+            <Button
+                android:id="@+id/backBtn"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="@string/backButton"
+                android:textColor="@color/white"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/input_edittext" />
+
+            <Button
+                android:id="@+id/pickBtn"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="Pick Date"
+                android:textColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/input_edittext" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/testing1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/testing2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</RelativeLayout>

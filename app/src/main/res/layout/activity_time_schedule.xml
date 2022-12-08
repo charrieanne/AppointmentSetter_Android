@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".TimeSchedule">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/navigation_blue"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="start"
+            android:text="LTO Appointment Setter"
+            android:layout_marginEnd="80dp"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/notification"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/notifications_24"
+            android:layout_marginStart="10dp" />
+
+        <Button
+            android:id="@+id/menu"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/menu_24" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topBar"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="10dp"
+        android:text="Choose time for appointment"
+        android:textColor="@color/lto_blue"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/time"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:background="#E4E3E3"
+        android:layout_below="@+id/textView"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="32dp"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/rb1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="9:00 AM"
+                        android:textColor="#000"
+                        android:textSize="25sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="10:00 AM"
+                        android:textColor="#000"
+                        android:textSize="25sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="11:00 AM"
+                        android:textColor="#000"
+                        android:textSize="25sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="12:00 PM"
+                        android:textColor="#000"
+                        android:textSize="25sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="1:00 PM"
+                        android:textColor="#000"
+                        android:textSize="25sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="2:00 PM"
+                        android:textColor="#000"
+                        android:textSize="25sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="3:00 PM"
+                        android:textColor="#000"
+                        android:textSize="25sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/time">
+
+            <Button
+                android:id="@+id/backBtn"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="@string/backButton"
+                android:textColor="@color/white"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/input_edittext" />
+
+            <Button
+                android:id="@+id/doneBtn"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:textColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/input_edittext" />
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/testing1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttons"
+        android:textColor="@color/white"/>
+    <TextView
+        android:id="@+id/testing2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/testing1"
+        android:textColor="@color/white"/>
+    <TextView
+        android:id="@+id/testing3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/testing2"
+        android:textColor="@color/white"/>
+</RelativeLayout>
