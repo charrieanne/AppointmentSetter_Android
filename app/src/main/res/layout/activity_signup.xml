@@ -62,9 +62,9 @@
                     android:layout_marginEnd="20dp"
                     android:autofillHints="false"
                     android:background="@drawable/round_background"
-                    android:hint="Last Name"
-                    android:inputType="text"
                     android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:hint="Last Name"
+                    android:inputType="textPersonName"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
                     android:textColor="#020202"
@@ -82,9 +82,9 @@
                     android:layout_marginEnd="20dp"
                     android:autofillHints="false"
                     android:background="@drawable/round_background"
-                    android:hint="First Name"
-                    android:inputType="text"
                     android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:hint="First Name"
+                    android:inputType="textPersonName"
                     android:maxLines="1"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
@@ -102,9 +102,9 @@
                     android:layout_marginEnd="20dp"
                     android:autofillHints="false"
                     android:background="@drawable/round_background"
-                    android:hint="Middle Name"
-                    android:inputType="text"
                     android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:hint="Middle Name"
+                    android:inputType="textPersonName"
                     android:maxLines="1"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
@@ -151,46 +151,24 @@
                     app:counterMaxLength="11"
                     app:endIconMode="clear_text" />
 
-                <RadioGroup
-                    android:id="@+id/rg_gender"
+
+                <Spinner
+                    android:id="@+id/genderDropdown"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="20dp"
-                    android:paddingEnd="20dp"
+                    android:layout_weight="4"
                     android:background="@drawable/round_background"
-                    android:orientation="horizontal"
-                    android:gravity="center">
-
-                    <RadioButton
-                        android:id="@+id/rb_male"
-                        android:layout_width="180dp"
-                        android:layout_height="wrap_content"
-                        android:text="Male"
-                        android:textColor="#232323"
-                        android:textSize="20sp" />
-
-                    <RadioButton
-                        android:id="@+id/rb2_female"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Female"
-                        android:textColor="#232323"
-                        android:textSize="20sp" />
-                </RadioGroup>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Address"
-                    android:textSize="25sp"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="20dp"/>
+                    android:spinnerMode="dropdown"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textSize="14sp"
+                    android:textAlignment="viewStart" />
 
                 <EditText
-                    android:id="@+id/region"
+                    android:id="@+id/addressField"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_marginStart="20dp"
@@ -198,7 +176,7 @@
                     android:layout_marginEnd="20dp"
                     android:autofillHints="false"
                     android:background="@drawable/round_background"
-                    android:hint="Region"
+                    android:hint="Address"
                     android:inputType="text"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
@@ -209,7 +187,7 @@
                     app:endIconMode="clear_text" />
 
                 <EditText
-                    android:id="@+id/province"
+                    android:id="@+id/contactNumber"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_marginStart="20dp"
@@ -217,8 +195,8 @@
                     android:layout_marginEnd="20dp"
                     android:autofillHints="false"
                     android:background="@drawable/round_background"
-                    android:hint="Province"
-                    android:inputType="text"
+                    android:hint="Contact Number"
+                    android:inputType="number|phone"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
                     android:textColor="#020202"
@@ -226,74 +204,6 @@
                     android:textSize="14sp"
                     app:counterMaxLength="11"
                     app:endIconMode="clear_text" />
-
-                <EditText
-                    android:id="@+id/municipality"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="20dp"
-                    android:autofillHints="false"
-                    android:background="@drawable/round_background"
-                    android:hint="Citi/Municipality"
-                    android:inputType="text"
-                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:textColor="#020202"
-                    android:textColorHint="#595858"
-                    android:textSize="14sp"
-                    app:counterMaxLength="11"
-                    app:endIconMode="clear_text" />
-
-                <EditText
-                    android:id="@+id/barangay"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="20dp"
-                    android:autofillHints="false"
-                    android:background="@drawable/round_background"
-                    android:hint="Barangay"
-                    android:inputType="text"
-                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:textColor="#020202"
-                    android:textColorHint="#595858"
-                    android:textSize="14sp"
-                    app:counterMaxLength="11"
-                    app:endIconMode="clear_text" />
-
-                <EditText
-                    android:id="@+id/postal"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="20dp"
-                    android:autofillHints="false"
-                    android:background="@drawable/round_background"
-                    android:hint="Postal Code"
-                    android:inputType="text"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:textColor="#020202"
-                    android:textColorHint="#595858"
-                    android:textSize="14sp"
-                    app:counterMaxLength="11"
-                    app:endIconMode="clear_text" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Credential"
-                    android:textSize="25sp"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="20dp"/>
 
                 <EditText
                     android:id="@+id/emailAdd"
@@ -305,7 +215,7 @@
                     android:autofillHints="false"
                     android:background="@drawable/round_background"
                     android:hint="Email"
-                    android:inputType="textEmailAddress"
+                    android:inputType="textWebEmailAddress|textEmailAddress"
                     android:maxLines="1"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
@@ -331,6 +241,7 @@
                     android:textColor="#020202"
                     android:textColorHint="#595858"
                     android:textSize="16sp"
+                    android:drawableEnd="@drawable/visibility_off_24"
                     app:endIconMode="password_toggle" />
 
                 <EditText
@@ -343,6 +254,7 @@
                     android:autofillHints="false"
                     android:background="@drawable/round_background"
                     android:hint="Confirm Password"
+                    android:drawableEnd="@drawable/visibility_off_24"
                     android:inputType="textPassword"
                     android:paddingStart="20dp"
                     android:paddingEnd="20dp"
@@ -490,8 +402,6 @@
                         android:layout_marginEnd="10dp"/>
 
                 </LinearLayout>
-
-
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

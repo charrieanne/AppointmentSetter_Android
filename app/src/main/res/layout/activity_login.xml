@@ -63,6 +63,7 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/round_background"
         android:hint="Password"
+        android:drawableEnd="@drawable/visibility_off_24"
         android:inputType="textPassword"
         android:maxLines="1"
         android:paddingStart="20dp"
@@ -70,6 +71,7 @@
         android:textColor="#020202"
         android:textColorHint="#595858"
         android:textSize="16sp"
+        android:longClickable="false"
         app:endIconMode="password_toggle" />
 
     <TextView

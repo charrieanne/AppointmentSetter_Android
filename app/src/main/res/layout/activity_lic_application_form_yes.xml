@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".LIC_ApplicationFormNo">
+    tools:context=".LIC_ApplicationFormYes">
 
     <LinearLayout
         android:id="@+id/topBar"
@@ -57,12 +57,13 @@
     <LinearLayout
         android:id="@+id/form"
         android:layout_width="350dp"
-        android:layout_height="500dp"
+        android:layout_height="450dp"
         android:background="#E4E3E3"
         android:layout_below="@+id/topBar"
-        android:layout_marginTop="60dp"
+        android:layout_gravity="center"
         android:layout_marginStart="30dp"
         android:gravity="center"
+        android:layout_marginTop="60dp"
         android:orientation="vertical">
 
         <ScrollView
@@ -83,7 +84,6 @@
                     android:fontFamily="sans-serif"
                     android:text="Licensing Application Form"
                     android:textAlignment="center"
-                    android:layout_marginTop="5dp"
                     android:textColor="#000"
                     android:textSize="26sp"
                     android:textStyle="bold" />
@@ -103,7 +103,7 @@
                     android:id="@+id/license_type"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_weight="4"
+                    android:layout_weight="5"
                     android:spinnerMode="dropdown"
                     android:layout_marginStart="5dp"
                     />
@@ -114,7 +114,7 @@
                     android:text="Requirements to be passed:"
                     android:layout_marginStart="5dp"
                     android:textColor="#000"
-                    android:textSize="16sp"
+                    android:textSize="20sp"
                     android:layout_marginTop="20dp"
                     android:fontFamily="sans-serif-light"
                     android:textStyle="bold"/>
@@ -122,12 +122,15 @@
                 <RelativeLayout
                     android:id="@+id/requirements"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:visibility="visible">
 
                     <TableLayout
-                        android:id="@+id/requirements_sp_new"
+                        android:id="@+id/requirements_np_renew"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_marginBottom="10dp"
                         android:background="@color/white"
                         android:visibility="invisible">
@@ -141,11 +144,10 @@
                                 android:layout_gravity="center"
                                 android:layout_span="2"
                                 android:gravity="center"
-                                android:text="Student Driver's Permit (NEW)"
+                                android:text="Driver's License Non- Professional (RENEWAL)"
                                 android:textColor="@color/white"
                                 android:textSize="16sp" />
                         </TableRow>
-
                         <TableRow
                             android:layout_margin="5dp"
                             android:background="@color/white">
@@ -154,7 +156,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
-                                android:text="@string/sp_req_new1"
+                                android:text="@string/np_req_renew1"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
 
@@ -164,10 +166,8 @@
                                 android:layout_height="35dp"
                                 android:layout_gravity="center"
                                 android:text="@string/upload_file"
-                                android:textSize="10sp"
-                                tools:ignore="SmallSp" />
+                                android:textSize="10sp"/>
                         </TableRow>
-
                         <TableRow
                             android:layout_margin="5dp"
                             android:background="@color/white">
@@ -188,7 +188,6 @@
                                 android:text="@string/upload_file"
                                 android:textSize="10sp"/>
                         </TableRow>
-
                         <TableRow
                             android:layout_margin="5dp"
                             android:background="@color/white">
@@ -197,7 +196,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
-                                android:text="@string/sp_req_new2"
+                                android:text="@string/np_req_renew3"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
 
@@ -209,7 +208,6 @@
                                 android:text="@string/upload_file"
                                 android:textSize="10sp"/>
                         </TableRow>
-
                         <TableRow
                             android:layout_margin="5dp"
                             android:background="@color/white">
@@ -218,7 +216,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
-                                android:text="@string/TDC"
+                                android:text="@string/np_req_renew4"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
 
@@ -230,7 +228,6 @@
                                 android:text="@string/upload_file"
                                 android:textSize="10sp"/>
                         </TableRow>
-
                         <TableRow
                             android:layout_margin="5dp"
                             android:background="@color/white">
@@ -238,7 +235,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="start"
+                                android:layout_gravity="center"
                                 android:text="@string/form"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
@@ -251,6 +248,30 @@
                                 android:text="@string/upload_file"
                                 android:textSize="10sp"/>
                         </TableRow>
+                    </TableLayout>
+
+                    <TableLayout
+                        android:id="@+id/requirements_np_upgrade"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/white"
+                        android:visibility="visible">
+
+                        <TableRow
+                            android:background="@color/lto_blue">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_span="2"
+                                android:gravity="center"
+                                android:text="Driver's License Non- Professional (UPGRADE)"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+                        </TableRow>
 
                         <TableRow
                             android:layout_margin="5dp"
@@ -260,7 +281,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
-                                android:text="@string/np_req_new4"
+                                android:text="@string/np_req_renew1"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
 
@@ -281,7 +302,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
-                                android:text="@string/sp_req_new3"
+                                android:text="@string/medical"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
 
@@ -293,30 +314,6 @@
                                 android:text="@string/upload_file"
                                 android:textSize="10sp"/>
                         </TableRow>
-                    </TableLayout>
-
-                    <TableLayout
-                        android:id="@+id/requirements_sp_renew"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="10dp"
-                        android:background="@color/white"
-                        android:visibility="invisible">
-
-                        <TableRow
-                            android:background="@color/lto_blue">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="30dp"
-                                android:layout_gravity="center"
-                                android:layout_span="2"
-                                android:gravity="center"
-                                android:text="Student Driver's Permit (RENEWAL)"
-                                android:textColor="@color/white"
-                                android:textSize="16sp" />
-                        </TableRow>
 
                         <TableRow
                             android:layout_margin="5dp"
@@ -324,9 +321,9 @@
 
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_gravity="start"
-                                android:text="@string/sp_req_renew1"
+                                android:text="@string/p_new3"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
 
@@ -347,7 +344,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
-                                android:text="@string/medical"
+                                android:text="@string/form"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
 
@@ -359,6 +356,30 @@
                                 android:text="@string/upload_file"
                                 android:textSize="10sp"/>
                         </TableRow>
+                    </TableLayout>
+
+                    <TableLayout
+                        android:id="@+id/requirements_p_renew"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/white"
+                        android:visibility="visible">
+
+                        <TableRow
+                            android:background="@color/lto_blue">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_span="2"
+                                android:gravity="center"
+                                android:text="Driver's License Professional (RENEW)"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+                        </TableRow>
 
                         <TableRow
                             android:layout_margin="5dp"
@@ -368,7 +389,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
-                                android:text="@string/sp_req_renew2"
+                                android:text="@string/np_req_renew1"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
 
@@ -389,7 +410,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
-                                android:text="@string/form"
+                                android:text="@string/medical"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
 
@@ -397,33 +418,9 @@
                                 android:id="@+id/uf_11"
                                 android:layout_width="wrap_content"
                                 android:layout_height="35dp"
-                                android:layout_gravity="center"
+                                android:layout_gravity="start"
                                 android:text="@string/upload_file"
                                 android:textSize="10sp"/>
-                        </TableRow>
-                    </TableLayout>
-
-                    <TableLayout
-                        android:id="@+id/requirements_sp_upgrade"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="10dp"
-                        android:background="@color/white"
-                        android:visibility="invisible">
-
-                        <TableRow
-                            android:background="@color/lto_blue">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="30dp"
-                                android:layout_gravity="center"
-                                android:layout_span="2"
-                                android:gravity="center"
-                                android:text="Student Driver's Permit (UPGRADE)"
-                                android:textColor="@color/white"
-                                android:textSize="16sp" />
                         </TableRow>
 
                         <TableRow
@@ -434,7 +431,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
-                                android:text="@string/sp_req_upgrade1"
+                                android:text="@string/p_new3"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
 
@@ -455,7 +452,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
-                                android:text="@string/medical"
+                                android:text="@string/form"
                                 android:textColor="@color/black"
                                 android:textSize="14sp" />
 
@@ -467,73 +464,7 @@
                                 android:text="@string/upload_file"
                                 android:textSize="10sp"/>
                         </TableRow>
-
-                        <TableRow
-                            android:layout_margin="5dp"
-                            android:background="@color/white">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="start"
-                                android:gravity="center"
-                                android:text="@string/np_req_new3"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-                            <Button
-                                android:id="@+id/uf_14"
-                                android:layout_width="wrap_content"
-                                android:layout_height="35dp"
-                                android:layout_gravity="center"
-                                android:text="@string/upload_file"
-                                android:textSize="10sp"/>
-                        </TableRow>
-
-                        <TableRow
-                            android:layout_margin="5dp"
-                            android:background="@color/white">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="start"
-                                android:text="@string/np_req_new4"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-                            <Button
-                                android:id="@+id/uf_15"
-                                android:layout_width="wrap_content"
-                                android:layout_height="35dp"
-                                android:layout_gravity="center"
-                                android:text="@string/upload_file"
-                                android:textSize="10sp"/>
-                        </TableRow>
-
-                        <TableRow
-                            android:layout_margin="5dp"
-                            android:background="@color/white">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="start"
-                                android:text="@string/form"
-                                android:textColor="@color/black"
-                                android:textSize="14sp" />
-
-                            <Button
-                                android:id="@+id/uf_16"
-                                android:layout_width="wrap_content"
-                                android:layout_height="35dp"
-                                android:layout_gravity="center"
-                                android:text="@string/upload_file"
-                                android:textSize="10sp"/>
-                        </TableRow>
-
                     </TableLayout>
-
                 </RelativeLayout>
             </LinearLayout>
         </ScrollView>

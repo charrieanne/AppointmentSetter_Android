@@ -1,5 +1,7 @@
 package com.example.ltoappointment;
 
+import static android.os.Environment.DIRECTORY_DOWNLOADS;
+
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -10,18 +12,21 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.DownloadManager;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ltoappointment.databinding.ActivityClNewBinding;
-import com.example.ltoappointment.databinding.ActivityVehicleRegistrationBinding;
+import com.example.ltoappointment.databinding.ActivityLicSpRenewBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.FirebaseStorage;
@@ -30,36 +35,33 @@ import com.google.firebase.storage.UploadTask;
 
 import java.util.UUID;
 
-public class VehicleRegistration extends AppCompatActivity implements View.OnClickListener {
-
-    DrawerLayout drawerLayout;
-    FirebaseAuth fAuth;
-    String userID;
+public class CL_NEW extends AppCompatActivity implements View.OnClickListener{
 
     public Uri imageUri1, imageUri2;
     FirebaseStorage storageFile;
     StorageReference storageReference;
     ActivityResultLauncher<String> uf_1, uf_2;
-    ActivityVehicleRegistrationBinding binding;
+    ActivityClNewBinding binding;
 
+    StorageReference ref;
+    SharedPreferences storage;
+    DrawerLayout drawerLayout;
+    FirebaseAuth fAuth;
+    String userID;
 
     Button next, back;
-    TextView chasis, engine;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityVehicleRegistrationBinding.inflate(getLayoutInflater());
+        binding = ActivityClNewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         next = findViewById(R.id.nextBTN);
         back = findViewById(R.id.backBTN);
-        drawerLayout = findViewById(R.id.mvRegistrationDrawer);
+        drawerLayout = findViewById(R.id.cl_new_drawer);
         storageFile = FirebaseStorage.getInstance();
         fAuth = FirebaseAuth.getInstance();
         storageFile = FirebaseStorage.getInstance();
-        chasis = findViewById(R.id.chasisNo);
-        engine = findViewById(R.id.engineNo);
 
         userID = fAuth.getCurrentUser().getUid();
 
@@ -88,12 +90,12 @@ public class VehicleRegistration extends AppCompatActivity implements View.OnCli
                     }
                 }
         );
-
-
-        next.setOnClickListener(this);
-        back.setOnClickListener(this);
         binding.uf1.setOnClickListener(this);
         binding.uf2.setOnClickListener(this);
+        binding.uf3.setOnClickListener(this);
+        next.setOnClickListener(this);
+        back.setOnClickListener(this);
+
     }
 
     //for navigation drawer menu
@@ -125,7 +127,7 @@ public class VehicleRegistration extends AppCompatActivity implements View.OnCli
     }
     public void ClickLogout(View view){
         fAuth.signOut();
-        startActivity(new Intent(VehicleRegistration.this, MainActivity.class));
+        startActivity(new Intent(CL_NEW.this, MainActivity.class));
         finish();
     }
     public void ClickPortal(View view){
@@ -135,6 +137,39 @@ public class VehicleRegistration extends AppCompatActivity implements View.OnCli
         Uri uriUrl = Uri.parse(url);
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);
+    }
+    public void ClickMyAppointment(View view){
+        redirectActivity(this, MyAppointment.class);
+    }
+
+    public void downloadFiles(Context context, String fileName, String fileExtension, String destinationDirectory, String url){
+
+        DownloadManager downloadManager = (DownloadManager) context.
+                getSystemService(Context.DOWNLOAD_SERVICE);
+        Uri uri = Uri.parse(url);
+        DownloadManager.Request request = new DownloadManager.Request(uri);
+
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        request.setDestinationInExternalFilesDir(context, destinationDirectory, fileName + fileExtension);
+
+        downloadManager.enqueue(request);
+    }
+
+    public void download(){
+        storageReference = storageFile.getReference();
+
+        ref = storageReference.child("APLFORM.pdf");
+        ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                String url = uri.toString();
+                downloadFiles(CL_NEW.this, "APLFORM", ".pdf", DIRECTORY_DOWNLOADS, url);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+            }
+        });
     }
 
     private void UploadRequirements(){
@@ -151,7 +186,7 @@ public class VehicleRegistration extends AppCompatActivity implements View.OnCli
                                 //Toast.makeText(LIC_NP_RENEW.this, "upload successful", Toast.LENGTH_SHORT).show();
                             }
                             else{
-                                Toast.makeText(VehicleRegistration.this, "upload requirement 1 failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(CL_NEW.this, "upload requirement 1 failed", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -169,7 +204,7 @@ public class VehicleRegistration extends AppCompatActivity implements View.OnCli
                                 //Toast.makeText(LIC_NP_RENEW.this, "upload successful", Toast.LENGTH_SHORT).show();
                             }
                             else{
-                                Toast.makeText(VehicleRegistration.this, "upload requirement 2 failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(CL_NEW.this, "upload requirement 2 failed", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -182,32 +217,27 @@ public class VehicleRegistration extends AppCompatActivity implements View.OnCli
     }
     @Override
     public void onClick(View v) {
-
-        String ChasisNo = chasis.getText().toString();
-        String EngineNo = engine.getText().toString();
-
         if (v.getId() == R.id.uf1) {
             uf_1.launch("image/*");
-        } else if (v.getId() == R.id.uf2) {
+        }
+        else if (v.getId() == R.id.uf2) {
             uf_2.launch("image/*");
         }
+        else if (v.getId() == R.id.uf3) {
+            download();
+        }
         else if (v.getId() == R.id.nextBTN) {
-            if(imageUri1 == null || imageUri2 == null ){
+            if(imageUri1 == null || imageUri2 == null){
                 Toast.makeText(this, "Upload Requirements First", Toast.LENGTH_SHORT).show();
-            }
-            else if(TextUtils.isEmpty(ChasisNo)){
-                Toast.makeText(this, "Please input Chasis Number", Toast.LENGTH_SHORT).show();
-            }
-            else if(TextUtils.isEmpty(EngineNo)){
-                Toast.makeText(this, "Please input Engine Number", Toast.LENGTH_SHORT).show();
             }
             else{
                 UploadRequirements();
-                startActivity(new Intent(VehicleRegistration.this, Calendar.class));
+                startActivity(new Intent(CL_NEW.this, Calendar.class));
             }
+
         }
         else if (v.getId() == R.id.backBTN) {
-            startActivity(new Intent(VehicleRegistration.this, Homepage.class));
+            startActivity(new Intent(CL_NEW.this, Homepage.class));
         }
     }
 }

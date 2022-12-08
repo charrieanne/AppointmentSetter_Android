@@ -121,9 +121,7 @@ public class TimeSchedule extends AppCompatActivity implements View.OnClickListe
 
             nameClient = confirmation.findViewById(R.id.fullName);
             transactionAppointment = confirmation.findViewById(R.id.transactionType);
-            applicationAppointment = confirmation.findViewById(R.id.applicationType);
             dateAppointment = confirmation.findViewById(R.id.dateAppointment);
-            timeAppointment = confirmation.findViewById(R.id.timeAppointment);
 
             //retrieve from local storage
             String transactionField = storage.getString("transaction_type","");
@@ -136,28 +134,8 @@ public class TimeSchedule extends AppCompatActivity implements View.OnClickListe
             String licenseApplication = licenseField + " " + licenseApplicationType;
 
 
-            //for transaction label
-            if(storage.contains(Transaction)){
-                transactionAppointment.setText(transactionField);
+            /*for transaction label
 
-                //for date label
-                if(storage.contains(Date)){
-                    dateAppointment.setText(dateField);
-
-                    //for time label
-                    if(storage.contains(Time)){
-                        timeAppointment.setText(timeField);
-
-                        //for appointment label
-                        if(storage.contains(lic_application) && storage.contains(License)){
-                            applicationAppointment.setText(licenseApplication);
-                        }
-                        else if(storage.contains(mvr_application)){
-                            applicationAppointment.setText(mvrApplicationType);
-                        }
-                    }
-                }
-            }
 
             confirm.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -193,6 +171,8 @@ public class TimeSchedule extends AppCompatActivity implements View.OnClickListe
                 }
             });
             confirmation.show();
+            */
+
         }
         else if(v.getId() == R.id.backBtn){
             startActivity(new Intent(TimeSchedule.this, Calendar.class));

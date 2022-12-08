@@ -17,7 +17,6 @@ public class Confirmation extends AppCompatActivity {
         name = findViewById(R.id.fullName);
         transaction = findViewById(R.id.transactionType);
         date = findViewById(R.id.dateAppointment);
-        time = findViewById(R.id.timeAppointment);
 
 
 

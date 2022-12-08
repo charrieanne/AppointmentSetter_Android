@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/sp_new_drawer"
+    android:background="@color/white"
+    tools:context=".LIC_SP_NEW">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar_main"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Upload Requirements"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/lto_blue"
+            android:textSize="20sp"/>
+
+        <LinearLayout
+            android:id="@+id/requirements"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:layout_below="@id/textView">
+
+            <ScrollView
+                android:id="@+id/scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <TableLayout
+                    android:id="@+id/requirements_sp_new"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:layout_marginTop="20dp">
+
+                    <TableRow
+                        android:background="@color/lto_blue"
+                        android:layout_margin="5dp"
+                        android:layout_width="match_parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:layout_span="2"
+                            android:gravity="center"
+                            android:text="Student Driver's Permit (NEW)"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_margin="10dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/sp_req_new1"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/uf1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:text="@string/upload_file"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_margin="10dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/medical"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/uf2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:text="@string/upload_file"
+                            android:textSize="10sp"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_margin="10dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/sp_req_new2"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/uf3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:text="@string/upload_file"
+                            android:textSize="10sp"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_margin="10dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/TDC"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/uf4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:text="@string/upload_file"
+                            android:textSize="10sp"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_margin="10dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/np_req_new4"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/uf5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:text="@string/upload_file"
+                            android:textSize="10sp"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_margin="10dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/sp_req_new3"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/uf6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:text="@string/upload_file"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_margin="10dp"
+                        android:background="@color/white">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/form"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <Button
+                            android:id="@+id/uf7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:text="@string/apl"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
+                    </TableRow>
+                </TableLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Note"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:gravity="start"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"/>
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="40dp">
+
+            <Button
+                android:id="@+id/backBTN"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="@string/backButton"
+                android:textColor="@color/white"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/input_edittext"/>
+
+            <Button
+                android:id="@+id/nextBTN"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nextButton"
+                android:textColor="@color/white"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/input_edittext"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_gravity="start"
+        >
+        <include
+            layout="@layout/menu"/>
+
+    </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

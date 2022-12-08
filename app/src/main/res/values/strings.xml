@@ -3,4 +3,42 @@
     <string name="backButton">BACK</string>
     <string name="nextButton">NEXT</string>
     <string name="header_title">LTO Appointment Setter</string>
+    <string name="upload_file">Upload File</string>
+
+    <string name="apl">Download APL Form</string>
+    <string name="medical">Medical Certificate from \n LTO Accredited Medical Clinic:</string>
+    <string name="form">Application for Permits \n  and Licenses (APL) form.</string>
+    <string name="TDC">Certificate of Completion \n of the Theorotical Driving Course: </string>
+
+    <string name="cl_req_2">Original and submission  of one (1) \n photocopy of any  of the following: \n PSA Certificate of Birth/Philippine \n Identification Card/Passport/PSA \n Certificate of Marriage for married \n women</string>
+    <string name="cl_req_renew_2">Original Conductor\'s License: </string>
+    <string name="cl_req_renew3">Certificate of Completion of Driving \n Enhancement Program (DEP) / \n Conductor\'s Enhancement Program \n (CEP) for the initial renewal of DL \n with five (5) years validity.</string>
+    <string name="cl_req_renew4">Submission of Certificate of \n Completion f Driver\'s/Conductor\'s \n Re-orientation Course for applicants \n with five (5) to nine (9) demerit points. </string>
+
+    <string name="sp_req_renew1">Existing Student Driver\'s Permit:</string>
+    <string name="sp_req_renew2">For holders of Student Permit \n before August 3, 2020, Certificate \n of Completion of the Theorotical \n Driving Course: </string>
+    <string name="sp_req_new1">Any  of the following: \n PSA Certificate of Birth/Philippine \n Identification Card/Passport/Local \n Civil Registry/PSA Certificate \n of Marriage for married women</string>
+    <string name="sp_req_new2">Any issued ID with \n photo and signature of \n the applicant</string>
+    <string name="sp_req_new3">For Foreigner, photocopy of \n passport with entry date and \n VISA with six (6) months duration.</string>
+
+
+    <string name="sp_req_upgrade1">Valid Student Driver\'s Permit \n (Refer to validity of SP)</string>
+
+    <string name="np_req_renew1">Existing Non-professional \n Driver\'s License:</string>
+    <string name="np_req_renew3">Certificate of Driving \n Enhancement Program (DEP):</string>
+    <string name="np_req_renew4">Certificate of Completion \n of Driver\'s Reorientation Course:</string>
+    <string name="np_req_new3">Original and photocopy of \n Practical Driving Course (PDC)</string>
+    <string name="np_req_new4">Parental or Guardian Consent \n (with valid government ID with \n photo and signature) for applicant \n below 18 years of age.</string>
+    <string name="np_req_new5">Parental or Guardian Consent \n (with valid government ID with \n photo and signature) if applicant \n is seventeen (17) years old.</string>
+
+    <string name="p_new3">Original and photocopy of \n Practical Driving School \n Certificate (PDC): </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Note">Note: Please remember to bring the requirements and the duly accomplished APL form when you have your transaction at the office.</string>
+    <string name="Note2">Note: Please remember to bring the requirements when you have your transaction at the office.</string>
+
+    <string name="mvr_1">Issued Official Receipt (OR) </string>
+    <string name="mvr_2">Certificate of Registration (CR) </string>
+    <string name="mvr_3">Stencil - Chasis No.</string>
+    <string name="mvr_4">Stencil - Engine No.</string>
 </resources>

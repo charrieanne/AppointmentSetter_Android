@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/mvRegistrationDrawer"
+    android:id="@+id/cl_new_drawer"
     android:background="@color/white"
-    tools:context=".VehicleRegistration">
+    tools:context=".CL_NEW">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,39 +27,39 @@
             android:textSize="20sp"/>
 
         <TableLayout
-            android:id="@+id/requirements_np_renew"
+            android:id="@+id/requirements_cl_new"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
             android:background="@color/white">
 
             <TableRow
-                android:background="@color/lto_blue"
-                android:layout_margin="5dp"
-                android:layout_width="match_parent">
+                android:background="@color/lto_blue">
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_span="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:text="Motor Vehicle Registration Plain Renewal"
+                    android:layout_span="2"
+                    android:gravity="center"
+                    android:text="Conductor's Licence New"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </TableRow>
+
             <TableRow
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:background="@color/white">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:text="@string/mvr_1"
+                    android:text="@string/medical"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <Button
                     android:id="@+id/uf1"
@@ -69,17 +69,18 @@
                     android:text="@string/upload_file"
                     android:textSize="10sp"/>
             </TableRow>
+
             <TableRow
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:background="@color/white">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:text="@string/mvr_2"
+                    android:text="@string/cl_req_2"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <Button
                     android:id="@+id/uf2"
@@ -89,51 +90,33 @@
                     android:text="@string/upload_file"
                     android:textSize="10sp"/>
             </TableRow>
+
             <TableRow
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:background="@color/white">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:text="@string/mvr_3"
+                    android:text="@string/form"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
-                <EditText
-                    android:id="@+id/chasisNo"
-                    android:layout_width="130dp"
-                    android:layout_height="35dp"
-                    android:autofillHints="false"
-                    android:background="@drawable/mvr_input"/>
-            </TableRow>
-            <TableRow
-                android:layout_margin="10dp"
-                android:background="@color/white">
-
-                <TextView
+                <Button
+                    android:id="@+id/uf3"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/mvr_4"
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/engineNo"
-                    android:layout_width="130dp"
                     android:layout_height="35dp"
-                    android:autofillHints="false"
-                    android:background="@drawable/mvr_input"/>
+                    android:layout_gravity="center"
+                    android:text="@string/apl"
+                    android:textSize="10sp"/>
             </TableRow>
-
         </TableLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/Note2"
+            android:text="@string/Note"
             android:textSize="16sp"
             android:layout_gravity="center"
             android:gravity="start"
@@ -146,7 +129,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="45dp">
 
             <Button
                 android:id="@+id/backBTN"
